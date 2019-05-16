@@ -60,6 +60,10 @@ type Thanos struct {
 	Source SourceType `json:"source"`
 }
 
+// ThanosDownSample represents the Resolution a block will be downsampled to.
+//
+// This is 0 if the block is raw and not downsampled yet, 1 for 5m and 2 for
+// 1hr. See pkg/downsample/downsample.go for details.
 type ThanosDownsample struct {
 	Resolution int64 `json:"resolution"`
 }
